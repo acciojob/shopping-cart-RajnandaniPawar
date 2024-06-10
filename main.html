@@ -8,6 +8,34 @@
 
 <body>
 	<!-- the entire body must be written by student -->
+        <div class="container">
+        <h1>Shopping List</h1>
+        <div>
+            <label for="item-name-input">Item Name:</label>
+            <input type="text" id="item-name-input">
+        </div>
+        <div>
+            <label for="item-price-input">Item Price:</label>
+            <input type="number" id="item-price-input" min="0" step="0.01">
+        </div>
+        <button id="add">Add</button>
+        
+        <table role="table">
+            <thead>
+                <tr role="row">
+                    <th role="columnheader">Item</th>
+                    <th role="columnheader">Price</th>
+                </tr>
+            </thead>
+            <tbody id="item-list">
+                <!-- List items will be dynamically inserted here -->
+            </tbody>
+        </table>
+        
+        <h3>Total: <span id="total">0</span></h3>
+    </div>
+
+	
     <script type="text/javascript" src="./script.js">
 </script>
 
