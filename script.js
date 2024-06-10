@@ -1,4 +1,3 @@
-//your code here
 document.addEventListener('DOMContentLoaded', function() {
     const addItemButton = document.getElementById('add');
     const itemNameInput = document.getElementById('item-name-input');
@@ -16,5 +15,26 @@ document.addEventListener('DOMContentLoaded', function() {
             const newRow = document.createElement('tr');
             
             const itemNameTd = document.createElement('td');
-           
+            itemNameTd.id = 'item';
+            itemNameTd.textContent = itemName;
+            newRow.appendChild(itemNameTd);
+            
+            const itemPriceTd = document.createElement('td');
+            itemPriceTd.id = 'price';
+            itemPriceTd.textContent = itemPrice.toFixed(2);
+            newRow.appendChild(itemPriceTd);
 
+            itemList.appendChild(newRow);
+
+            // Update grand total
+            grandTotal += itemPrice;
+            totalElement.textContent = grandTotal.toFixed(2);
+
+            // Clear input fields
+            itemNameInput.value = '';
+            itemPriceInput.value = '';
+        } else {
+            alert('Please enter a valid item name and price.');
+        }
+    });
+});
